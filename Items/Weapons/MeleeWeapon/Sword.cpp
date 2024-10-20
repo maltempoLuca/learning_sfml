@@ -25,12 +25,14 @@ void Sword::render(sf::RenderTarget &target) {
 }
 
 void Sword::updateAnimation(std::string animation, const float &dt) {
+    std::cout << "animation key " << animation << std::endl;
     this->animationComponent->play(animation, dt);
 }
 
 void Sword::initAnimationComponent() {
     this->animationComponent = new AnimationComponent(this->weapon_sprite, this->weapon_texture);
-    this->animationComponent->addAnimation("ATTACK_DOWN", 2.f, 0, 0, 7, 0, this->dimensions.x, this->dimensions.y, false);
+    this->animationComponent->addAnimation("ATTACK_DOWN", 2.f, 0, 0, 7, 0, this->dimensions.x, this->dimensions.y,
+                                           false);
     this->animationComponent->addAnimation("ATTACK_UP", 2.f, 0, 0, 7, 0, this->dimensions.x, this->dimensions.y, false);
 }
 

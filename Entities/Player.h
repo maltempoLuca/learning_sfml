@@ -15,7 +15,12 @@ private:
     //Initializer Functions
     void initVariables(std::pair<int, int> pair, std::pair<int, int> pair1);
 
+    bool isAttacking();
+
+    void commonUpdate(const MovementData &next, const float &dt);
+
 public:
+
     Player(float x, float y, sf::Texture &texture_sheet);
 
     ~Player() final;
@@ -29,7 +34,7 @@ public:
 
     void attack(const float &dt);
 
-    void updateCurrentAnimation(const float &dt);
+    void setNextAnimation(const float &dt);
 
     float getCurrentHp();
 
